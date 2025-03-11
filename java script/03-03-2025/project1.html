@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        welcome
+    </center>
+    <script>
+        // Write a program to take marks as input and display the grade based on the following criteria:
+        function getGrade(marks) {
+    if (marks >= 90 && marks <= 100) {
+        return "A+";
+    } else if (marks >= 80 && marks < 90) {
+        return "A";
+    } else if (marks >= 70 && marks < 80) {
+        return "B";
+    } else if (marks >= 60 && marks < 70) {
+        return "C";
+    } else if (marks >= 50 && marks < 60) {
+        return "D";
+    } else {
+        return "Fail";
+    }
+}
+
+// Taking input from user
+const marks = parseInt(prompt("Enter your marks: "));
+
+if (!isNaN(marks) && marks >= 0 && marks <= 100) {
+    alert("Your grade is: " + getGrade(marks));
+} else {
+    alert("Invalid input! Please enter marks between 0 and 100.");
+}
+
+    </script>
+    </script>
+</body>
+</html>

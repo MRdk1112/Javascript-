@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>Welcome</center>
+    <script>
+        function calculateNetSalary(salary) {
+    let tax = 0;
+    
+    if (salary > 100000) {
+        tax = salary * 0.20;
+    } else if (salary > 50000) {
+        tax = salary * 0.10;
+    }
+    
+    return salary - tax;
+}
+
+// Taking input from user
+const salary = parseFloat(prompt("Enter your Salary: "));
+
+if (!isNaN(salary) && salary > 0) {
+    alert("Your Net Salary after tax deduction is: ₹" + calculateNetSalary(salary));
+} else {
+    alert("Invalid input! Please enter a valid salary amount.");
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Write a program to calculate Simple Interest using the formula:-->
+      <center>Welcome</center>
+      <script>
+        function calculateSimpleInterest(P, R, T) {
+    return (P * R * T) / 100;
+}
+
+// Taking input from user
+const principal = parseFloat(prompt("Enter the Principal amount: "));
+const rate = parseFloat(prompt("Enter the Rate of Interest: "));
+const time = parseFloat(prompt("Enter the Time period (in years): "));
+
+if (!isNaN(principal) && principal > 0 && !isNaN(rate) && rate > 0 && !isNaN(time) && time > 0) {
+    alert("The Simple Interest is: ₹" + calculateSimpleInterest(principal, rate, time));
+} else {
+    alert("Invalid input! Please enter valid values.");
+}
+
+      </script>
+</body>
+</html>

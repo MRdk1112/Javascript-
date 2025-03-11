@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>Welcome</center>
+    <script>
+        function calculateNetSalary(salary) {
+    let tax = 0;
+    
+    if (salary > 100000) {
+        tax = salary * 0.20;
+    } else if (salary > 50000) {
+        tax = salary * 0.10;
+    }
+    
+    return salary - tax;
+}
+
+// Taking input from user
+const salary = parseFloat(prompt("Enter your Salary: "));
+
+if (!isNaN(salary) && salary > 0) {
+    alert("Your Net Salary after tax deduction is: ₹" + calculateNetSalary(salary));
+} else {
+    alert("Invalid input! Please enter a valid salary amount.");
+}
+
+// Function to check if a number is even or odd
+function checkEvenOrOdd(number) {
+    return number % 2 === 0 ? "Even" : "Odd";
+}
+
+// Taking input from user
+const number = parseInt(prompt("Enter a number: "));
+
+if (!isNaN(number)) {
+    alert("The number is: " + checkEvenOrOdd(number));
+} else {
+    alert("Invalid input! Please enter a valid number.");
+}
+
+// Function to check if a character is a vowel
+function isVowel(char) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    return vowels.includes(char.toLowerCase()) ? "Vowel" : "Not a Vowel";
+}
+
+// Taking input from user
+const char = prompt("Enter a single character: ");
+
+if (char && char.length === 1 && isNaN(char)) {
+    alert("The character is: " + isVowel(char));
+} else {
+    alert("Invalid input! Please enter a single alphabet character.");
+}
+
+    </script>
+</body>
+</html>

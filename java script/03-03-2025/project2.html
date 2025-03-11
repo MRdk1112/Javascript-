@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        welcome
+    </center>
+    <!-- Write a program that takes the number of electricity units consumed and calculates the bill based on these conditions:-->
+     <script>
+        function calculateElectricityBill(units) {
+    let bill = 0;
+    const fixedCharge = 50;
+
+    if (units <= 100) {
+        bill = units * 5;
+    } else if (units <= 300) {
+        bill = (100 * 5) + ((units - 100) * 7);
+    } else {
+        bill = (100 * 5) + (200 * 7) + ((units - 300) * 10);
+    }
+
+    return bill + fixedCharge;
+}
+
+// Taking input from user
+const units = parseInt(prompt("Enter the number of electricity units consumed: "));
+
+if (!isNaN(units) && units >= 0) {
+    alert("Your electricity bill is: ₹" + calculateElectricityBill(units));
+} else {
+    alert("Invalid input! Please enter a valid number of units.");
+}
+
+     </script>
+</body>
+</html>
