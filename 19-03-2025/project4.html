@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumFirstLastDigit(num) {
+    let numStr = num.toString(); 
+    let firstDigit = parseInt(numStr[0]); 
+    let lastDigit = parseInt(numStr[numStr.length - 1]); 
+    return firstDigit + lastDigit;
+}
+
+
+console.log(sumFirstLastDigit(4567)); 
+console.log(sumFirstLastDigit(908));  
+console.log(sumFirstLastDigit(5));    
+
+    </script>
+</body>
+</html>
