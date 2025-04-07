@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--result-->
+    <section class="text-white mt-10">
+        <table class="inline">
+            <thead>
+                <tr class="border border2">
+                    <th class=" border2">Subject</th>
+                    <th class=" border2">Marks Out Of 100</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class=" border2">
+                    <td>Hindi</td>
+                    <td><input type="number" id="inp2" class="border2"></td>
+                </tr>
+                <tr  class="border2">
+                    <td>English</td>
+                    <td><input type="number" id="inp3" class="border2"></td>
+                </tr>
+                <tr  class="border2">
+                    <td>SS</td>
+                    <td><input type="number" id="inp4" class="border2"></td>
+                </tr>
+                <tr  class="border2">
+                    <td>Science</td>
+                    <td><input type="number" id="inp5" class="border2"></td>
+                </tr>
+                <tr  class="border2">
+                    <td>Maths</td>
+                    <td><input type="number" id="inp6" class="border2"></td>
+                </tr>
+                <tr  class="border2">
+                    <td class="border2">Total</td>
+                    <td><p class="border2 total" id="tt"></td>
+                </tr>
+                <tr  class="border2">
+                    <td class="border2">Percentage</td>
+                    <td><p class="border2 percentage" id="pr"></p></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <button class="border2" id="totalbtn" onclick="totalall()">Result</button>
+        <button class="border2 pl-10" id="clearbtn" onclick="clearall()">Clear</button>
+    </section>
+
+    <script>
+        let inp2=document.getElementById("inp2");
+    let inp3=document.getElementById("inp3");
+    let inp4=document.getElementById("inp4");
+    let inp5=document.getElementById("inp5");
+    let inp6=document.getElementById("inp6");
+    let total=document.querySelector(".total");
+    let percentage=document.querySelector(".percentage");
+
+    function totalall()
+    {        
+        if(inp2.value==="" || inp3.value==="" || inp4.value==="" || inp5.value==="" || inp6.value===" ")
+        {
+            alert("Please enter all subject of marks");
+        }
+        else
+        {
+            total.innerHTML = Number(inp2.value) + Number(inp3.value) + Number(inp4.value) + Number(inp5.value) + Number(inp6.value);
+            percentage.innerHTML = (Number(inp2.value) + Number(inp3.value) + Number(inp4.value) + Number(inp5.value) + Number(inp6.value)) * 100 / 500;
+        }
+    }
+    function clearall()
+    {
+        document.getElementById("inp2").value="";
+        document.getElementById("inp3").value="";
+        document.getElementById("inp4").value="";
+        document.getElementById("inp5").value="";
+        document.getElementById("inp6").value="";
+        total.innerHTML="";
+        percentage.innerHTML="";
+    }
+    </script>
+</body>
+</html>

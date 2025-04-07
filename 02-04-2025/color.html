@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .color-box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box" class="color-box">Color Box</div>
+<button onclick="changeColors()">Change Colors</button>
+
+<div id="myDiv">Click the button to change my color!</div>
+<button onclick="changeColor()">Change Color</button>
+
+
+
+<script>
+  function changeColors() {
+    const box = document.getElementById("box");
+    box.style.backgroundColor = "purple";
+    box.style.color = "white";
+  }
+
+  function changeColor() {
+    document.getElementById("myDiv").style.backgroundColor = "yellow";
+    document.getElementById("myDiv").style.color = "black";
+  }
+</script>
+
+</body>
+</html>
