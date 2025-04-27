@@ -1,0 +1,42 @@
+body {
+    background: #f0f2f5;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  
+  #countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  
+  #countdown div {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .quote-box {
+    margin-top: 2rem;
+  }
+  
+  #quote {
+    font-style: italic;
+    color: #555;
+    margin-top: 1rem;
+  }
+  
