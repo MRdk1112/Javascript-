@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Shopping Cart</h1>
+    </header>
+
+    <div class="cart-item">
+      <img src="https://m.media-amazon.com/images/I/81M4zm2+0FL._SX679_.jpg" alt="Extended Warranty">
+      <div class="details">
+        <h2>Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Violet, 12GB, 512GB Storage)</h2>
+        <p>Email Delivery - No Physical Kit</p>
+        <p class="price">₹114999</p>
+
+        <div class="controls">
+          <button onclick="changeQty(-1)">-</button>
+          <input type="text" id="qty" value="1" readonly>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+
+        <div class="actions">
+          <button>Delete</button>
+          <button>Save for later</button>
+          <button>Share</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subtotal">
+      <p>Subtotal (1 item): <strong id="subtotal">₹114999</strong></p>
+      <button class="buy-btn"><a href="dk.html">Proceed to Buy</a></button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
