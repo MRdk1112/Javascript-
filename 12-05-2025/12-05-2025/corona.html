@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COVID-19 Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+    .card h2 {
+      margin-bottom: 10px;
+      color: #444;
+    }
+    .confirmed { color: #f39c12; }
+    .deaths { color: #e74c3c; }
+    .recovered { color: #27ae60; }
+  </style>
+</head>
+<body>
+  <h1>🌍 COVID-19 Global Tracker</h1>
+  <div class="stats">
+    <div class="card confirmed">
+      <h2>Confirmed</h2>
+      <p id="confirmed">Loading...</p>
+    </div>
+    <div class="card deaths">
+      <h2>Deaths</h2>
+      <p id="deaths">Loading...</p>
+    </div>
+    <div class="card recovered">
+      <h2>Recovered</h2>
+      <p id="recovered">Loading...</p>
+    </div>
+  </div>
+
+  <script>
+    async function fetchCovidData() {
+      try {
+        const response = await fetch("https://api.covid19api.com/summary");
+        const data = await response.json();
+
+        const globalData = data.Global;
+
+        document.getElementById("confirmed").textContent = globalData.TotalConfirmed.toLocaleString();
+        document.getElementById("deaths").textContent = globalData.TotalDeaths.toLocaleString();
+        document.getElementById("recovered").textContent = globalData.TotalRecovered.toLocaleString();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        document.querySelectorAll("#confirmed, #deaths, #recovered").forEach(el => el.textContent = "Error");
+      }
+    }
+
+    fetchCovidData();
+  </script>
+</body>
+</html>
